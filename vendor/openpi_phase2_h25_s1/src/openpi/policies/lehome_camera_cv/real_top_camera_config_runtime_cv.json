@@ -1,0 +1,138 @@
+{
+  "source_capture_json": null,
+  "source_frame": "top_camera_real_setup (OpenCV optical frame)",
+  "matrix_layout_interpretation": "column-vector standard",
+  "orientation_comment": "Camera has an 8 degree tilt about camera/world +X from the axis-aligned setup: camera +Z/forward is tilted from world -Z toward camera -Y/world +Y, and camera -Y/up is lifted from world +Y toward world +Z.",
+  "axis_mapping_comment": "Camera +X/right -> world +X; camera +Y/down -> mostly world -Y with -Z component; camera +Z/forward -> mostly world -Z with +Y component.",
+  "camera_frame": {
+    "x": "right",
+    "y": "down",
+    "z": "forward"
+  },
+  "camera_frame_z_flip_180": {
+    "enabled": false,
+    "description": "Optional transform for a 180 degree top-image rotation about the camera optical Z axis. Enable only when top-camera images are flipped by 180 degrees and state/action poses are expressed in this camera CV frame.",
+    "applies_to": [
+      "camera_frame_16d_observation_pose",
+      "camera_frame_16d_action_pose"
+    ],
+    "do_not_apply_to": [
+      "raw_12d_joint_angles"
+    ],
+    "position_rule": "pos_flipped = R_flip @ pos; equivalent to [x, y, z] -> [-x, -y, z]",
+    "orientation_rule": "For wxyz quaternions, left-multiply by q_flip_wxyz: q_flipped = q_flip_wxyz \u2297 q. Do not right-multiply.",
+    "R_flip": [
+      [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "q_flip_wxyz": [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "q_flip_xyzw": [
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "pose_8d_layout": [
+      "x",
+      "y",
+      "z",
+      "qw",
+      "qx",
+      "qy",
+      "qz",
+      "gripper"
+    ],
+    "pose_16d_layout": {
+      "left": [
+        0,
+        8
+      ],
+      "right": [
+        8,
+        16
+      ]
+    },
+    "pipeline_note": "If source data is raw 12D joint angles, first run FK into camera-frame 16D pose, then apply this flip transform."
+  },
+  "position_xyz_m": [
+    0.0,
+    0.15,
+    0.65
+  ],
+  "orientation_quat_wxyz": [
+    0.0697564737441253,
+    -0.9975640502598242,
+    0.0,
+    0.0
+  ],
+  "orientation_quat_xyzw": [
+    -0.9975640502598242,
+    0.0,
+    0.0,
+    0.0697564737441253
+  ],
+  "T_world_camera": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      -0.9902680687415704,
+      0.13917310096006544,
+      0.15
+    ],
+    [
+      0.0,
+      -0.13917310096006544,
+      -0.9902680687415704,
+      0.65
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "conversion_from_usd": {
+    "R_usd_from_cv": [
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    ],
+    "equation": "T_world_cam_cv = T_world_cam_usd @ block_diag(R_usd_from_cv,1)"
+  }
+}

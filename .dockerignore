@@ -1,0 +1,11 @@
+.git/
+**/.pytest_cache/
+**/__pycache__/
+**/*.py[cod]
+**/.DS_Store
+
+outputs/
+model_bundle/outputs/
+
+*.log
+*.tmp

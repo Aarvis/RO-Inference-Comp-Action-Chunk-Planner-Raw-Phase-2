@@ -1,0 +1,22 @@
+paths:
+  checkpoint: ../weights/ooi/best.pt
+  head_left_image: null
+  wrist_left_image: null
+  wrist_right_image: null
+  output_dir: ../outputs/ooi_smoke_test
+runtime:
+  device: cuda
+  precision: fp16
+  input_mode: input_224
+  output_crop_size: 224
+  confidence_threshold: 0.1
+  black_frame_below_threshold: true
+  shared_dino: true
+  dino_model_name_or_path: ../weights/dino/dinov3-vits16plus-pretrain-lvd1689m
+  model_cache_dir: ../weights/dino
+  local_files_only: true
+  trust_remote_code: false
+output:
+  save_crop: true
+  save_overlay: true
+  save_resized_inputs: true

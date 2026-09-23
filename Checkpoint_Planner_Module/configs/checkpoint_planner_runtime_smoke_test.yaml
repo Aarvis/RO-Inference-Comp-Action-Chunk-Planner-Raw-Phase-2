@@ -1,0 +1,29 @@
+paths:
+  planner_train_config: E:/Robot-Origami-Challenge/RO-Inference-Comp-Action-Chunk-Planner-Raw-Phase-2/Checkpoint_Planner_Module/configs/checkpoint_planner_runtime_model.yaml
+  planner_manifest_root:
+  planner_checkpoint: E:/Robot-Origami-Challenge/Competition_Paper_Reprocessed_Dataset/metadata/checkpoint_planner_training_runs/no_hmm_224_headleft_tactile_distill/last.pt
+  output_dir: E:/Robot-Origami-Challenge/RO-Inference-Comp-Action-Chunk-Planner-Raw-Phase-2/Checkpoint_Planner_Module/outputs/smoke_test
+
+runtime:
+  device: cpu
+  precision: fp32
+  patch_count: 196
+  value_variant: final
+  uncertainty_source: raw
+  timestamp_source: step_index
+
+synthetic:
+  seed: 1234
+  num_steps: 35
+  ooi_present_period: 2
+  patch_count: 196
+  patch_dim: 384
+  state_dim: 65
+  tactile_dim: 60
+  token_scale: 0.02
+  state_scale: 0.1
+  tactile_scale: 0.1
+
+output:
+  save_summary: true
+  summary_name: checkpoint_planner_smoke_summary.json

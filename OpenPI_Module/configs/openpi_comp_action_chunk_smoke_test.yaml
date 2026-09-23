@@ -1,0 +1,12 @@
+paths:
+  runtime_config: ./openpi_comp_action_chunk_runtime.yaml
+
+synthetic:
+  seed: 1234
+  test_raw_present: true
+  test_raw_missing: true
+  test_raw_invalid: true
+
+output:
+  output_dir: ../outputs/smoke_test
+  summary_name: openpi_comp_action_chunk_smoke_summary.json

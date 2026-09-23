@@ -1,0 +1,344 @@
+paths:
+  checkpoint_dir: ../model_bundles/pi05_origami_comp_action_chunk_phase2
+  tokenizer_model_path: ../../../RO-Inference/OpenPI_Module/assets/paligemma_tokenizer.model
+  asset_id: competition_paper_reprocessed_origami_comp_action_chunk
+openpi:
+  config_name: pi05_origami_comp_action_chunk_phase2
+  vendored_source_root: ../../vendor/openpi/src
+  source_config_file: vendor/openpi/src/openpi/training/config.py
+  model:
+    class: Pi0Config
+    dtype: bfloat16
+    paligemma_variant: gemma_2b
+    action_expert_variant: gemma_300m
+    pi05: true
+    action_dim: 65
+    state_dim: 65
+    action_horizon: 15
+    max_token_len: 768
+    discrete_state_input: true
+    image_keys:
+    - base_0_rgb
+    - left_wrist_0_rgb
+    - right_wrist_0_rgb
+    origami_vla:
+      enabled: true
+      action_mode: action_chunk
+      disable_auxiliary_losses: true
+      episode_execution_speed_preference: true
+      use_speed_efficiency_weight: true
+      normalize_speed_efficiency_weighted_loss: true
+      speed_efficiency_weight_eps: 1.0e-06
+      belief_dim: 29
+      history_dim: 512
+      planner_belief_hidden_dims:
+      - 256
+      - 512
+      planner_progress_hidden_dims:
+      - 128
+      - 512
+      planner_uncertainty_hidden_dims:
+      - 128
+      - 512
+      planner_history_hidden_dims:
+      - 1024
+      planner_use_type_embeddings: true
+      degree: 3
+      max_control_points: 18
+      max_span_count: 15
+      curve_sample_count: 120
+      smooth_l1_beta: 0.05
+      curve_loss_weight: 0.5
+      start_loss_weight: 0.1
+      end_loss_weight: 0.25
+      width_loss_weight: 0.05
+      width_min: 0.0001
+      action_norm_stats_dir: null
+      use_quantile_norm: true
+      tactile_dim: 60
+      tactile_prompt_input: true
+      prompt_discrete_clip: true
+      tactile_enabled: false
+      tactile_finger_count: 10
+      tactile_channels_per_finger: 6
+      tactile_token_dim: 256
+      tactile_finger_hidden_dims:
+      - 64
+      - 128
+      tactile_transformer_layers: 2
+      tactile_attention_heads: 4
+      tactile_ffn_dim: 512
+      tactile_use_type_embeddings: true
+      tactile_quantile_low: 0.005
+      tactile_quantile_high: 0.995
+      tactile_min_scale: 1.0e-06
+      tactile_soft_clip_scale: 5.0
+      ftp_tactile_enabled: true
+      ftp_tactile_branch: auto
+      ftp_tactile_image_size: 224
+      ftp_tactile_patch_size: 16
+      ftp_tactile_width: 768
+      ftp_tactile_depth: 3
+      ftp_tactile_heads: 12
+      ftp_tactile_mlp_ratio: 4
+      ftp_tactile_backbone_micro_batch: 64
+      ftp_tactile_freeze_backbone: true
+      ftp_tactile_include_cls_token: true
+      ftp_tactile_normalize_images: true
+      ftp_tactile_image_mean:
+      - 0.485
+      - 0.456
+      - 0.406
+      ftp_tactile_image_std:
+      - 0.229
+      - 0.224
+      - 0.225
+      ftp_tactile_adapter_dim: 512
+      ftp_tactile_prefix_dim: 2048
+      ftp_tactile_tokens_per_finger: 4
+      ftp_tactile_hands: 2
+      ftp_tactile_fingers_per_hand: 5
+      ftp_tactile_resampler_layers: 2
+      ftp_tactile_resampler_heads: 8
+      ftp_tactile_resampler_ffn_dim: 2048
+      ftp_tactile_cross_finger_layers: 4
+      ftp_tactile_cross_finger_heads: 8
+      ftp_tactile_cross_finger_ffn_dim: 2048
+      ftp_tactile_dropout: 0.1
+      ftp_tactile_rope_enabled: true
+      ftp_tactile_rope_base: 10000.0
+      ftp_tactile_rope_scale: 1.0
+      ftp_tactile_hand_values:
+      - -1.0
+      - 1.0
+      ftp_tactile_finger_values:
+      - -1.0
+      - -0.5
+      - 0.0
+      - 0.5
+      - 1.0
+  data:
+    class: OrigamiCompActionChunkDataConfig
+    repo_id: local/origami_comp_action_chunk
+    asset_id: competition_paper_reprocessed_origami_comp_action_chunk
+    dataset_root: /home/ubuntu/workspace/RO-competition-paper-dataset
+    manifest_root: /home/ubuntu/workspace/RO-competition-paper-dataset/metadata/openpi_origami_comp_action_chunk/no_hmm_224_headleft_tactile_prompt_planner
+    prompt: fold paper into airplane
+    action_source: action_chunk
+    local_target_npz_name: ''
+    action_filename: action_65d.npy
+    action_chunk_stride: 2
+    drop_horizon_clipped: true
+    planner_branch: posterior
+    planner_value_variant: raw
+    tactile_filename: tactile_60d.npy
+    dataset_backend: shard
+    shard_root: /home/ubuntu/workspace/RO-competition-paper-dataset/metadata/openpi_origami_comp_action_chunk_shards/no_hmm_224_headleft_tactile_prompt_planner
+    shard_manifest_name: shard_manifest.json
+    shard_rows_name: rows.parquet
+    shard_complete_marker_name: complete.marker
+    shard_require_complete: true
+    shard_max_cached_shards: 2
+    shard_use_stored_row_order: true
+    sample_weight_column: sample_weight
+    require_sample_weight: true
+    image_source_type: video
+    frame_cache_root_relpath: arrays/vla_frame_cache_224_uint8
+    fail_on_missing_modalities: true
+    max_rows: null
+    image_modalities:
+      base_0_rgb: videos/head_left.mp4
+      left_wrist_0_rgb: videos/wrist_left.mp4
+      right_wrist_0_rgb: videos/wrist_right.mp4
+    frame_cache_modalities:
+      base_0_rgb: base_0_rgb_224x224_uint8.npy
+      left_wrist_0_rgb: left_wrist_0_rgb_224x224_uint8.npy
+      right_wrist_0_rgb: right_wrist_0_rgb_224x224_uint8.npy
+    load_tactile_images: true
+    tactile_deform_video: videos/tactile_deform.mp4
+    tactile_raw_video: videos/tactile_raw.mp4
+    tactile_require_raw_video: false
+    tactile_image_size: 224
+    tactile_raw_input_dropout_prob: 0.5
+    tactile_raw_dropout_seed: 1234
+    tactile_raw_grid:
+      rows: 2
+      cols: 5
+      expected_width: 1600
+      expected_height: 480
+      resize_mode: resize
+    tactile_deform_grid:
+      rows: 2
+      cols: 5
+      expected_width: 1200
+      expected_height: 480
+      resize_mode: resize
+    include_planner_features: true
+    limit_loader_caches: true
+    max_cached_episodes: 4
+    max_cached_videos: 24
+    data_transforms:
+      inputs:
+      - DeltaActions(make_bool_mask(65))
+      outputs:
+      - AbsoluteActions(make_bool_mask(65))
+    manifest_build:
+      checkpoint_planner_manifest_root: null
+      ignore_checkpoint_planner_split: true
+      num_val_episodes: 0
+      val_seed: 1234
+      val_episode_uids: []
+      frame_stride: 1
+      keep_horizon_clipped: false
+      planner_export_root: /home/ubuntu/workspace/RO-competition-paper-dataset/metadata/checkpoint_planner_vla_rollout_exports/no_hmm_224_headleft_tactile_distill_prior__gamma10_future15_thr065_recomputed
+      planner_assignment_mode: episode_sampled
+      train_planner_view_modes:
+      - frame_stride_10
+      - fixed_7
+      - fixed_15
+      - random_mix
+      val_planner_view_modes:
+      - frame_stride_10
+      - random_mix
+      planner_value_variant: raw
+      planner_assignment_seed: 1234
+      planner_dropout_episode_prob: 0.16
+      planner_view_mode_probs:
+        frame_stride_10: 0.5
+        random_mix: 0.25
+        fixed_7: 0.25
+        fixed_15: 0.0
+      planner_branch_probs:
+        posterior: 0.5
+        prior: 0.5
+      planner_index_name: planner_vla_rollout_index.parquet
+      planner_arrays_name: planner_vla_rollout_features.npz
+      planner_complete_marker_name: export_complete.marker
+      require_planner_complete_marker: true
+      allow_missing_planner_rows: false
+      speed_weighting: true
+      speed_label_relpaths:
+      - labels/checkpoints.json
+      - labels/transfer_checkpoints.json
+      speed_stats_split: train
+      speed_semantic_group_size: 2
+      speed_final_unpaired_policy: keep
+      speed_done_policy: neutral
+      speed_alpha: 2.2
+      speed_min_weight: 0.65
+      speed_max_weight: 1.5
+      speed_epsilon_frames: 1.0e-06
+      speed_weight_val: false
+      train_index_name: train_index.parquet
+      val_index_name: val_index.parquet
+    shard_build:
+      shard_root: /home/ubuntu/workspace/RO-competition-paper-dataset/metadata/openpi_origami_comp_action_chunk_shards/no_hmm_224_headleft_tactile_prompt_planner
+      split: train
+      target_shard_bytes: 128GiB
+      target_num_shards: null
+      max_episodes_per_shard: null
+      num_workers: 8
+      seed: 1234
+      season_column: source_season
+      row_order: shuffled_index
+      image_size: 224
+      overwrite: false
+      skip_existing: true
+      require_manifest_verified: false
+      shard_manifest_name: shard_manifest.json
+      shard_plan_name: shard_plan.parquet
+      rows_name: rows.parquet
+      metadata_name: metadata.json
+      complete_marker_name: complete.marker
+      max_shards_per_run: null
+      progress_update_frames: 256
+      progress_max_active_bars: 8
+      progress_poll_seconds: 0.25
+      progress_leave_active_bars: false
+  weight_loader:
+    class: CompositeWeightLoader
+    loaders:
+    - class: CheckpointWeightLoader
+      path: gs://openpi-assets/checkpoints/pi05_base/params
+      missing_regex: .*(lora|origami_planner_adapter|origami_ftp_tactile_prefix_encoder|action_in_proj|action_out_proj).*
+    - class: NpzSubsetWeightLoader
+      path: /home/ubuntu/workspace/RO-competition-paper-dataset/metadata/openpi_adapter_pretraining/no_hmm_224_headleft_tactile_distill/openpi_origami_planner_adapter_prefixed_params.npz
+      strict: true
+    - class: OrbaxSubsetWeightLoader
+      path: /home/ubuntu/workspace/RO-competition-paper-dataset/metadata/ftp_tactile_prefix_encoder_runs/sharpawave_40x2048_jax/params
+      key_prefix: origami_ftp_tactile_prefix_encoder
+      strict: true
+  training:
+    project_name: openpi
+    exp_name: null
+    assets_base_dir: ./assets
+    checkpoint_base_dir: ./checkpoints
+    seed: 42
+    lr_schedule:
+      class: CosineDecaySchedule
+      warmup_steps: 300
+      peak_lr: 8.0e-05
+      decay_steps: 17500
+      decay_lr: 1.0e-06
+    optimizer:
+      class: AdamW
+      clip_gradient_norm: 1.0
+    ema_decay: 0.999
+    non_adapter_lr_multiplier: null
+    adapter_param_regex: .*future_latent_adapter.*
+    param_lr_multipliers:
+    - regex: .*origami_planner_adapter.*
+      multiplier: 3.0
+    - regex: .*origami_ftp_tactile_prefix_encoder.*
+      multiplier: 1.5
+    - regex: .*origami_ftp_tactile_prefix_encoder/prefix_projection.*
+      multiplier: 3.0
+    freeze_filter: PathRegex('.*origami_ftp_tactile_prefix_encoder/backbone/.*')
+    batch_size: 160
+    num_workers: 0
+    num_train_steps: 17500
+    log_interval: 50
+    run_val: false
+    val_repo_id: null
+    val_robot_spline_sidecar_root: null
+    val_frequency: 2000
+    val_batch_size: 32
+    checkpoint_strategy: manual
+    save_interval: 1000
+    save_steps:
+    - 1000
+    - 2000
+    - 4000
+    - 8750
+    - 10000
+    - 15000
+    keep_period: 5000
+    max_to_keep: 8
+    overwrite: false
+    resume: false
+    wandb_enabled: true
+    log_first_batch_images: false
+    policy_metadata: null
+    ppo_policy: null
+    fsdp_devices: 1
+prompt: fold paper into airplane
+runtime:
+  policy_sample_steps: 10
+  openpi_param_dtype: bfloat16
+  random_seed: 0
+  jax:
+    preallocate: false
+    mem_fraction: 0.6
+    allocator: platform
+    platforms: null
+input:
+  image_size: 224
+  state_dim: 65
+  action_dim: 65
+  action_horizon: 15
+  tactile_dim: 60
+  tactile_image_size: 224
+  tolerate_invalid_optional_raw: true
+  raw_zero_is_unavailable: true
+output:
+  require_finite_actions: true

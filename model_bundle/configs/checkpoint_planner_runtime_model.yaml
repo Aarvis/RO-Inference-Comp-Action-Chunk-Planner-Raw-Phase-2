@@ -1,0 +1,50 @@
+paths:
+  manifest_root: ../weights/checkpoint_planner/manifest
+data:
+  sequence_length: 30
+model:
+  patch_dim: 384
+  state_dim: 65
+  tactile_dim: 60
+  use_head_left: true
+  wrist_resampler_queries: 128
+  wrist_resampler_blocks: 2
+  attention_heads: 6
+  resampler_ffn_dim: 1536
+  ooi_wrist_fusion_blocks: 1
+  state_hidden_dim: 256
+  state_out_dim: 128
+  tactile_hidden_dim: 128
+  tactile_out_dim: 64
+  fusion_hidden_dim: 1024
+  frame_dim: 512
+  temporal_layers: 4
+  temporal_heads: 8
+  temporal_ffn_dim: 2048
+  trunk_dim: 256
+  dropout: 0.1
+  rope_base: 10000.0
+  nominal_dt_seconds: 0.5
+prior:
+  gamma: 10.0
+  gamma_future: 15.0
+  current_ref_weight: 0.3
+  near_future_weight: 0.3
+  w_min: 0.05
+  w_future: 0.01
+  lambda_prior: 1.0
+  eps: 1.0e-06
+  transition_completion_threshold: 0.65
+runtime:
+  patch_count: 196
+  value_variant: final
+  uncertainty_source: raw
+  timestamp_source: step_index
+references:
+  planner_train_config_source: E:/Robot-Origami-Challenge/dataset-processing/checkpoint-planner/trainer/configs/train_checkpoint_planner_224_headleft_tactile_distill.yaml
+  prior_eval_config_source: E:/Robot-Origami-Challenge/dataset-processing/checkpoint-planner/trainer/configs/evaluate_checkpoint_planner_prior_224_headleft_tactile.yaml
+  selected_from_train:
+  - data.sequence_length
+  - model
+  selected_from_prior_eval:
+  - prior

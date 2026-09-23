@@ -1,0 +1,24 @@
+paths:
+  checkpoint: E:/Robot-Origami-Challenge/OOI_Zoom_Module/runs/224_latest_inference_ooi_exp001/checkpoints/best.pt
+  head_left_image:
+  wrist_left_image:
+  wrist_right_image:
+  output_dir: E:/Robot-Origami-Challenge/RO-Inference-Comp-Action-Chunk-Planner-Raw-Phase-2/OOI_Module/outputs/smoke_test
+
+runtime:
+  device: cuda
+  precision: fp16
+  input_mode: input_224
+  output_crop_size: 224
+  confidence_threshold: 0.1
+  black_frame_below_threshold: true
+  shared_dino: true
+  dino_model_name_or_path:
+  model_cache_dir: E:/Robot-Origami-Challenge/OOI_Zoom_Module/models
+  local_files_only: true
+  trust_remote_code: false
+
+output:
+  save_crop: true
+  save_overlay: true
+  save_resized_inputs: true

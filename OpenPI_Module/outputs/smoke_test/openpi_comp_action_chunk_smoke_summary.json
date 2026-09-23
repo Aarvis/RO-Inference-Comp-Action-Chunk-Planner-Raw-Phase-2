@@ -1,0 +1,82 @@
+{
+  "runtime_config": "E:\\Robot-Origami-Challenge\\RO-Inference-Comp-Action-Chunk\\OpenPI_Module\\configs\\openpi_comp_action_chunk_runtime.yaml",
+  "input_only": true,
+  "cases": [
+    {
+      "raw_mode": "present",
+      "tactile": {
+        "deform_images_shape": [
+          10,
+          3,
+          224,
+          224
+        ],
+        "raw_images_shape": [
+          10,
+          3,
+          224,
+          224
+        ],
+        "raw_available": true,
+        "raw_status": "provided_grid"
+      }
+    },
+    {
+      "raw_mode": "missing",
+      "tactile": {
+        "deform_images_shape": [
+          10,
+          3,
+          224,
+          224
+        ],
+        "raw_images_shape": [
+          10,
+          3,
+          224,
+          224
+        ],
+        "raw_available": false,
+        "raw_status": "missing"
+      }
+    },
+    {
+      "raw_mode": "invalid",
+      "tactile": {
+        "deform_images_shape": [
+          10,
+          3,
+          224,
+          224
+        ],
+        "raw_images_shape": [
+          10,
+          3,
+          224,
+          224
+        ],
+        "raw_available": false,
+        "raw_status": "invalid"
+      }
+    },
+    {
+      "raw_mode": "zero",
+      "tactile": {
+        "deform_images_shape": [
+          10,
+          3,
+          224,
+          224
+        ],
+        "raw_images_shape": [
+          10,
+          3,
+          224,
+          224
+        ],
+        "raw_available": false,
+        "raw_status": "all_zero"
+      }
+    }
+  ]
+}

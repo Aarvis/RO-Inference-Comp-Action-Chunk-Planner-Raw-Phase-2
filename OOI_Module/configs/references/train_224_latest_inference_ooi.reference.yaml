@@ -1,0 +1,31 @@
+# Reference only. Runtime architecture is loaded from the checkpoint's embedded config.
+seed: 42
+output_dir: E:/Robot-Origami-Challenge/OOI_Zoom_Module/runs/224_latest_inference_ooi_exp001
+
+data:
+  train_samples_json: E:/Robot-Origami-Challenge/competition-dataset-OOI-episodes/ooi_zoom_224_latest_inference_ooi/manifests/train_samples.json
+  val_samples_json: E:/Robot-Origami-Challenge/competition-dataset-OOI-episodes/ooi_zoom_224_latest_inference_ooi/manifests/val_samples.json
+  label_name: OOI
+  image_size: 224
+  frame_stride: 10
+  target_confidence_threshold: 0.5
+  normalize_mean: imagenet
+
+model:
+  dino_model_name: facebook/dinov3-vits16plus-pretrain-lvd1689m
+  model_cache_dir: E:/Robot-Origami-Challenge/OOI_Zoom_Module/models
+  local_files_only: false
+  trust_remote_code: false
+  freeze_dino: true
+  unfreeze_last_n_blocks: 0
+  embed_dim: 384
+  cross_attention_layers: 2
+  attention_heads: 4
+  mlp_ratio: 2.0
+  wrist_tokens_per_view: 64
+  dropout: 0.1
+  use_wrist_inputs: true
+
+training:
+  device: cuda
+  precision: fp16

@@ -1,0 +1,27 @@
+paths:
+  dataset_root: ../../Competition_Paper_Reprocessed_Dataset
+  output_dir: ../outputs/dataset_replay_planner_off
+  openpi_runtime_config: ../OpenPI_Module/configs/openpi_comp_action_chunk_runtime.yaml
+runtime:
+  device: cuda:0
+  precision: fp16
+  camera_image_size: 224
+  planner_enabled: false
+  planner_feature_mode: selected_branch_raw_no_continuity
+  planner_value_variant: raw
+server:
+  policy_name: origami_comp_action_chunk
+  action_horizon: 15
+  action_dim: 65
+  execution_mode: async
+dataset_replay:
+  prompt: fold paper into airplane
+  action_horizon: 15
+  action_chunk_stride: 2
+  step_stride: 10
+  tactile_modes:
+  - deform_only
+  - deform_plus_raw
+  - mixed_50
+  mixed_raw_probability: 0.5
+  include_dataset_timestamps: true

@@ -1,0 +1,452 @@
+{
+  "config_path": "/home/ubuntu/RO-Inference-Comp-Action-Chunk-Planner-Raw/model_bundle/bundle.yaml",
+  "dataset_root": "/home/ubuntu/RO-Inference-Comp-Action-Chunk-Planner-Raw/model_bundle/dataset_replay",
+  "output_dir": "/home/ubuntu/RO-Inference-Comp-Action-Chunk-Planner-Raw/outputs/dataset_replay_smoke_full_episode",
+  "plan": {
+    "dataset_root": "/home/ubuntu/RO-Inference-Comp-Action-Chunk-Planner-Raw/model_bundle/dataset_replay",
+    "episode_count": 1,
+    "action_horizon": 25,
+    "action_chunk_stride": 1,
+    "step_stride": 10,
+    "phase_offsets": [
+      0
+    ],
+    "tactile_modes": [
+      "deform_plus_raw_planner_dropped"
+    ],
+    "max_samples_per_episode": null,
+    "max_total_samples": 8000,
+    "episodes": [
+      {
+        "episode_uid": "season_POC22061_2026_07_17_10_23_21_train__episode_000020",
+        "episode_root": "/home/ubuntu/RO-Inference-Comp-Action-Chunk-Planner-Raw/model_bundle/dataset_replay/episodes/season_POC22061_2026_07_17_10_23_21_train__episode_000020",
+        "length": 4508,
+        "raw_video_present": true,
+        "phase_counts": {
+          "0": 449
+        },
+        "samples": 449
+      }
+    ],
+    "modes": {
+      "deform_plus_raw_planner_dropped": {
+        "samples": 449,
+        "episodes": 1,
+        "raw_eligible_episodes": 1
+      }
+    }
+  },
+  "modes": {
+    "deform_plus_raw_planner_dropped": {
+      "tactile_mode": "deform_plus_raw_planner_dropped",
+      "elapsed_seconds": 567.465804541,
+      "samples_per_second": 0.7912371043453056,
+      "planned_samples": 449,
+      "processed_samples": 449,
+      "per_sample_path": "/home/ubuntu/RO-Inference-Comp-Action-Chunk-Planner-Raw/outputs/dataset_replay_smoke_full_episode/deform_plus_raw_planner_dropped/per_sample_metrics.jsonl",
+      "summary_path": "/home/ubuntu/RO-Inference-Comp-Action-Chunk-Planner-Raw/outputs/dataset_replay_smoke_full_episode/deform_plus_raw_planner_dropped/replay_summary.json",
+      "metrics": {
+        "samples": 449,
+        "failed_samples": 0,
+        "tactile_raw_requested": 449,
+        "tactile_raw_available": 449,
+        "ooi_target_present": 0,
+        "planner_available": 0,
+        "training_loss_samples": 449,
+        "fractions": {
+          "tactile_raw_requested": 1.0,
+          "tactile_raw_available": 1.0,
+          "ooi_target_present": 0.0,
+          "planner_available": 0.0
+        },
+        "action_error": {
+          "samples": 449,
+          "values": 729625,
+          "mae": 0.005960836184200615,
+          "rmse": 0.021718276317637536,
+          "max_abs": 1.390995740890503,
+          "first_step_mae": {
+            "count": 449,
+            "mean": 0.003096168327883506,
+            "std": 0.0023322895741867376,
+            "min": 0.00043456496987346325,
+            "max": 0.02778311922940282
+          },
+          "first_step_rmse": {
+            "count": 449,
+            "mean": 0.005703123961158513,
+            "std": 0.004881564654864426,
+            "min": 0.0006608984692202885,
+            "max": 0.07182932219785271
+          },
+          "last_step_mae": {
+            "count": 449,
+            "mean": 0.007911750115492352,
+            "std": 0.010673178398307769,
+            "min": 0.00047034827661823677,
+            "max": 0.18370411055019267
+          },
+          "last_step_rmse": {
+            "count": 449,
+            "mean": 0.014742975454935801,
+            "std": 0.019664520087201053,
+            "min": 0.000698875138436642,
+            "max": 0.32569521419585723
+          },
+          "horizon_mae": [
+            0.0030961683278835045,
+            0.003767500187270573,
+            0.0041281908141796745,
+            0.004458610457748603,
+            0.004677396434268575,
+            0.005002452461371966,
+            0.005212178873481218,
+            0.005401316129012759,
+            0.005875692568945829,
+            0.005786237906442493,
+            0.005974983069922111,
+            0.006088860588994706,
+            0.006146311273090089,
+            0.006313303064348677,
+            0.0063942631862903155,
+            0.006475958287873397,
+            0.0065703626682075186,
+            0.00671271200934306,
+            0.006825615835508791,
+            0.006653409182404068,
+            0.007146097697055846,
+            0.007274740451537665,
+            0.007454609896265217,
+            0.007672183118076367,
+            0.007911750115492354
+          ],
+          "horizon_rmse": [
+            0.0075070164776668774,
+            0.015481763980929987,
+            0.015828031102953694,
+            0.017361121860224975,
+            0.016290437135435865,
+            0.01993496738177013,
+            0.02037040225281497,
+            0.02098582809013622,
+            0.025497245009023617,
+            0.02129191716471061,
+            0.022288726881649932,
+            0.022266057510969196,
+            0.021670263780380308,
+            0.023577420303948052,
+            0.023472976219867034,
+            0.02366743545685216,
+            0.024069900704945257,
+            0.025257807211367556,
+            0.025269849651662457,
+            0.019747256697322524,
+            0.024693483596421664,
+            0.024304778337143246,
+            0.023786127032505107,
+            0.024024462523479607,
+            0.02457740172444543
+          ],
+          "top_dimension_mae": [
+            {
+              "dim": 34,
+              "mae": 0.020534909042459238
+            },
+            {
+              "dim": 33,
+              "mae": 0.019565588175371802
+            },
+            {
+              "dim": 4,
+              "mae": 0.01635193649005031
+            },
+            {
+              "dim": 35,
+              "mae": 0.01540977122190819
+            },
+            {
+              "dim": 5,
+              "mae": 0.01444650803086968
+            },
+            {
+              "dim": 9,
+              "mae": 0.012689088608212011
+            },
+            {
+              "dim": 6,
+              "mae": 0.01211478946793758
+            },
+            {
+              "dim": 12,
+              "mae": 0.010864978914189386
+            },
+            {
+              "dim": 7,
+              "mae": 0.010537598560937611
+            },
+            {
+              "dim": 41,
+              "mae": 0.010167638241484003
+            }
+          ]
+        },
+        "training_style_loss": {
+          "chunked_loss_mean": {
+            "count": 449,
+            "mean": 0.016861485984306812,
+            "std": 0.03127876714800397,
+            "min": 0.00012662009976338595,
+            "max": 0.2383873164653778
+          },
+          "loss": {
+            "count": 449,
+            "mean": 0.01686148560171136,
+            "std": 0.03127876673738782,
+            "min": 0.00012662009976338595,
+            "max": 0.2383873164653778
+          },
+          "loss_aux_total": {
+            "count": 449,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "loss_base_flow": {
+            "count": 449,
+            "mean": 0.01686148560171136,
+            "std": 0.03127876673738782,
+            "min": 0.00012662009976338595,
+            "max": 0.2383873164653778
+          },
+          "loss_curve_fm_raw": {
+            "count": 449,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "loss_curve_fm_weighted": {
+            "count": 449,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "loss_curve_raw": {
+            "count": 449,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "loss_curve_weighted": {
+            "count": 449,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "loss_end_raw": {
+            "count": 449,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "loss_end_weighted": {
+            "count": 449,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "loss_start_raw": {
+            "count": 449,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "loss_start_weighted": {
+            "count": 449,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "loss_total": {
+            "count": 449,
+            "mean": 0.01686148560171136,
+            "std": 0.03127876673738782,
+            "min": 0.00012662009976338595,
+            "max": 0.2383873164653778
+          },
+          "loss_width_raw": {
+            "count": 449,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "loss_width_weighted": {
+            "count": 449,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "metric_curve_fm_finite": {
+            "count": 449,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "metric_curve_fm_jvp_error_norm": {
+            "count": 449,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "metric_curve_fm_jvp_norm_pred": {
+            "count": 449,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "metric_curve_fm_jvp_norm_target": {
+            "count": 449,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "metric_curve_fm_max_abs_velocity_pred": {
+            "count": 449,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "metric_curve_fm_max_abs_velocity_target": {
+            "count": 449,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "metric_curve_fm_min_predicted_span_width": {
+            "count": 449,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "metric_curve_fm_velocity_mae": {
+            "count": 449,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "metric_curve_fm_velocity_rms": {
+            "count": 449,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "metric_curve_mae_rad": {
+            "count": 449,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "metric_end_mae_rad": {
+            "count": 449,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "metric_start_mae_rad": {
+            "count": 449,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "metric_width_mae": {
+            "count": 449,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          }
+        },
+        "timings_ms": {
+          "dino_camera": {
+            "count": 449,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "dino_ooi": {
+            "count": 449,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "ooi": {
+            "count": 449,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "openpi": {
+            "count": 449,
+            "mean": 230.2572196169263,
+            "std": 24.572857973968297,
+            "min": 178.3642829998371,
+            "max": 317.6655849999861
+          },
+          "openpi_policy_only": {
+            "count": 449,
+            "mean": 217.01315474387354,
+            "std": 20.989729972650785,
+            "min": 173.4774749997996,
+            "max": 298.90629200008334
+          },
+          "planner": {
+            "count": 449,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "total": {
+            "count": 449,
+            "mean": 413.18012140311606,
+            "std": 35.45510596139986,
+            "min": 340.26734999997643,
+            "max": 534.5228580000594
+          },
+          "training_loss": {
+            "count": 449,
+            "mean": 171.88294993318212,
+            "std": 17.037498176251688,
+            "min": 149.96777600003952,
+            "max": 271.31452799994804
+          }
+        }
+      }
+    }
+  }
+}

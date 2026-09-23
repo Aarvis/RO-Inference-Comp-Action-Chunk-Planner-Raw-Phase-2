@@ -1,0 +1,98 @@
+{
+  "config": "configs\\checkpoint_planner_runtime_smoke_test.yaml",
+  "planner_train_config": "E:/Robot-Origami-Challenge/RO-Inference-Comp-Action-Chunk/Checkpoint_Planner_Module/configs/checkpoint_planner_runtime_model.yaml",
+  "planner_checkpoint": "E:/Robot-Origami-Challenge/Competition_Paper_Reprocessed_Dataset/metadata/checkpoint_planner_training_runs/no_hmm_224_headleft_tactile_distill/last.pt",
+  "output_dir": "E:\\Robot-Origami-Challenge\\RO-Inference-Comp-Action-Chunk\\Checkpoint_Planner_Module\\outputs\\smoke_test",
+  "num_steps": 2,
+  "sequence_length": 30,
+  "patch_count": 196,
+  "patch_dim": 384,
+  "state_dim": 65,
+  "tactile_dim": 60,
+  "branch_counts": {
+    "posterior": 1,
+    "prior": 1
+  },
+  "last_result": {
+    "sequence_length": 30,
+    "history_length": 2,
+    "timestamp": 0.5,
+    "step_index": 1,
+    "ooi_target_present": false,
+    "selected_branch": "prior",
+    "state_belief_variant": "final",
+    "uncertainty_source": "raw",
+    "planner_available": true,
+    "c_ref_before": 0,
+    "c_ref_after": 0,
+    "selected": {
+      "branch": "prior",
+      "raw_checkpoint_index": 2,
+      "final_checkpoint_index": 0,
+      "raw_state_index": 4,
+      "final_state_index": 0,
+      "phase_pred_index": 0,
+      "raw_checkpoint_label": "align second triangle fold",
+      "final_checkpoint_label": "align first triangle fold",
+      "raw_state_label": "align second triangle fold",
+      "final_state_label": "align first triangle fold",
+      "phase_pred_label": "P",
+      "prog_pred": 0.3411814570426941,
+      "trans_pred": 0.01602185331285,
+      "uncertainty_entropy_norm": 0.1374569833278656,
+      "uncertainty_pmax": 0.9190701842308044,
+      "uncertainty_margin": 0.8656486868858337
+    },
+    "posterior": {
+      "branch": "posterior",
+      "raw_checkpoint_index": 2,
+      "final_checkpoint_index": 0,
+      "raw_state_index": 4,
+      "final_state_index": 0,
+      "phase_pred_index": 0,
+      "raw_checkpoint_label": "align second triangle fold",
+      "final_checkpoint_label": "align first triangle fold",
+      "raw_state_label": "align second triangle fold",
+      "final_state_label": "align first triangle fold",
+      "phase_pred_label": "P",
+      "prog_pred": 0.3012016713619232,
+      "trans_pred": 0.008338017389178276,
+      "uncertainty_entropy_norm": 0.28263187408447266,
+      "uncertainty_pmax": 0.5925824046134949,
+      "uncertainty_margin": 0.20016026496887207
+    },
+    "prior": {
+      "branch": "prior",
+      "raw_checkpoint_index": 2,
+      "final_checkpoint_index": 0,
+      "raw_state_index": 4,
+      "final_state_index": 0,
+      "phase_pred_index": 0,
+      "raw_checkpoint_label": "align second triangle fold",
+      "final_checkpoint_label": "align first triangle fold",
+      "raw_state_label": "align second triangle fold",
+      "final_state_label": "align first triangle fold",
+      "phase_pred_label": "P",
+      "prog_pred": 0.3411814570426941,
+      "trans_pred": 0.01602185331285,
+      "uncertainty_entropy_norm": 0.1374569833278656,
+      "uncertainty_pmax": 0.9190701842308044,
+      "uncertainty_margin": 0.8656486868858337
+    }
+  },
+  "openpi_feature_shapes": {
+    "planner_available": "bool",
+    "planner_state_belief": [
+      29
+    ],
+    "planner_progress_transition": [
+      2
+    ],
+    "planner_uncertainty": [
+      3
+    ],
+    "planner_history_latent": [
+      512
+    ]
+  }
+}

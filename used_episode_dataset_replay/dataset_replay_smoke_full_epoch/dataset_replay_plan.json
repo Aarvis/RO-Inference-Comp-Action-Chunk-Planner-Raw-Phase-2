@@ -1,0 +1,34 @@
+{
+  "dataset_root": "/home/ubuntu/RO-Inference-Comp-Action-Chunk-Planner-Raw/model_bundle/dataset_replay",
+  "episode_count": 1,
+  "action_horizon": 25,
+  "action_chunk_stride": 1,
+  "step_stride": 10,
+  "phase_offsets": [
+    0
+  ],
+  "tactile_modes": [
+    "deform_plus_raw_planner_dropped"
+  ],
+  "max_samples_per_episode": null,
+  "max_total_samples": 8000,
+  "episodes": [
+    {
+      "episode_uid": "season_POC22061_2026_07_17_10_23_21_train__episode_000020",
+      "episode_root": "/home/ubuntu/RO-Inference-Comp-Action-Chunk-Planner-Raw/model_bundle/dataset_replay/episodes/season_POC22061_2026_07_17_10_23_21_train__episode_000020",
+      "length": 4508,
+      "raw_video_present": true,
+      "phase_counts": {
+        "0": 449
+      },
+      "samples": 449
+    }
+  ],
+  "modes": {
+    "deform_plus_raw_planner_dropped": {
+      "samples": 449,
+      "episodes": 1,
+      "raw_eligible_episodes": 1
+    }
+  }
+}

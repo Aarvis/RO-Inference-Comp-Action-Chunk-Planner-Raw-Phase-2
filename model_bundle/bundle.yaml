@@ -1,0 +1,83 @@
+bundle:
+  format: origami-comp-action-chunk-bundle-v1
+  inference_kit: origami-inference-kit-async
+  policy_name: origami_comp_action_chunk
+paths:
+  dataset_root: dataset_replay
+  output_dir: outputs/dataset_replay
+  ooi_config: configs/ooi_zoom_runtime.yaml
+  ooi_checkpoint: weights/ooi/best.pt
+  checkpoint_planner_config: configs/checkpoint_planner_runtime_model.yaml
+  checkpoint_planner_checkpoint: weights/checkpoint_planner/checkpoint.pt
+  checkpoint_planner_manifest_root: weights/checkpoint_planner/manifest
+  openpi_runtime_config: configs/openpi_comp_action_chunk_runtime.yaml
+  dino_model_name_or_path: ./weights/dino/dinov3-vits16plus-pretrain-lvd1689m
+  dino_model_cache_dir: weights/dino
+runtime:
+  device: cuda:0
+  precision: fp16
+  camera_image_size: 224
+  ooi_input_mode: input_224
+  dino_local_files_only: true
+  dino_trust_remote_code: false
+  planner_enabled: true
+  planner_feature_mode: selected_branch_raw_no_continuity
+  planner_value_variant: raw
+  planner_uncertainty_source: raw
+  planner_transition_completion_threshold: 0.65
+  planner_timestamp_source: monotonic
+server:
+  policy_name: origami_comp_action_chunk
+  action_horizon: 15
+  action_dim: 65
+  execution_mode: async
+  warmup_inferences: 1
+  require_prompt: true
+  allow_observation_timestamp: true
+  tolerate_invalid_optional_raw: true
+  log_inference_requests: true
+  log_inference_every_n: 1
+dataset_replay:
+  warmup_inferences: null
+  warmup_training_loss: true
+  episode_uids: []
+  max_episodes: null
+  action_horizon: 15
+  action_chunk_stride: 2
+  step_stride: 10
+  phase_offsets: []
+  prompt: fold paper into airplane
+  tactile_modes:
+  - deform_only
+  - deform_plus_raw
+  - mixed_50
+  - deform_plus_raw_planner_dropped
+  mixed_raw_probability: 0.5
+  mixed_seed: 1234
+  require_raw_for_deform_plus_raw: true
+  compute_action_error: true
+  compute_training_loss: true
+  loss_rng_seed: 1234
+  loss_noise_samples: 1
+  loss_train_mode: false
+  loss_every_n_samples: 1
+  max_loss_samples: null
+  max_samples_per_episode: null
+  max_total_samples: null
+  save_per_sample: true
+  per_sample_filename: per_sample_metrics.jsonl
+  summary_filename: replay_summary.json
+  all_modes_summary_filename: replay_summary_all_modes.json
+  videos_subdir: videos
+  arrays_subdir: arrays
+  head_left_video: head_left.mp4
+  wrist_left_video: wrist_left.mp4
+  wrist_right_video: wrist_right.mp4
+  tactile_deform_video: tactile_deform.mp4
+  tactile_raw_video: tactile_raw.mp4
+  state_array: state_65d.npy
+  action_array: action_65d.npy
+  tactile_array: tactile_60d.npy
+  timestamps_array: timestamps.npy
+  frame_index_array: frame_index.npy
+  include_dataset_timestamps: true
