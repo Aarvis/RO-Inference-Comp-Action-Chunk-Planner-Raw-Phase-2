@@ -1,0 +1,829 @@
+{
+  "config_path": "/home/ubuntu/RO-Inference-Comp-Action-Chunk-Planner-Raw-Phase-2/model_bundle/bundle.yaml",
+  "dataset_root": "/home/ubuntu/RO-Inference-Comp-Action-Chunk-Planner-Raw-Phase-2/model_bundle/dataset_replay",
+  "output_dir": "/home/ubuntu/RO-Inference-Comp-Action-Chunk-Planner-Raw-Phase-2/outputs/dataset_replay_smoke",
+  "plan": {
+    "dataset_root": "/home/ubuntu/RO-Inference-Comp-Action-Chunk-Planner-Raw-Phase-2/model_bundle/dataset_replay",
+    "episode_count": 1,
+    "action_horizon": 15,
+    "action_chunk_stride": 2,
+    "step_stride": 10,
+    "phase_offsets": [
+      0
+    ],
+    "tactile_modes": [
+      "deform_plus_raw",
+      "deform_plus_raw_planner_dropped"
+    ],
+    "max_samples_per_episode": null,
+    "max_total_samples": 8000,
+    "episodes": [
+      {
+        "episode_uid": "season_POC22061_2026_07_17_10_23_21_train__episode_000020",
+        "episode_root": "/home/ubuntu/RO-Inference-Comp-Action-Chunk-Planner-Raw-Phase-2/model_bundle/dataset_replay/episodes/season_POC22061_2026_07_17_10_23_21_train__episode_000020",
+        "length": 4508,
+        "raw_video_present": true,
+        "phase_counts": {
+          "0": 448
+        },
+        "samples": 448
+      }
+    ],
+    "modes": {
+      "deform_plus_raw": {
+        "samples": 448,
+        "episodes": 1,
+        "raw_eligible_episodes": 1
+      },
+      "deform_plus_raw_planner_dropped": {
+        "samples": 448,
+        "episodes": 1,
+        "raw_eligible_episodes": 1
+      }
+    }
+  },
+  "modes": {
+    "deform_plus_raw": {
+      "tactile_mode": "deform_plus_raw",
+      "elapsed_seconds": 392.51882513300006,
+      "samples_per_second": 1.1413465324833805,
+      "planned_samples": 448,
+      "processed_samples": 448,
+      "per_sample_path": "/home/ubuntu/RO-Inference-Comp-Action-Chunk-Planner-Raw-Phase-2/outputs/dataset_replay_smoke/deform_plus_raw/per_sample_metrics.jsonl",
+      "summary_path": "/home/ubuntu/RO-Inference-Comp-Action-Chunk-Planner-Raw-Phase-2/outputs/dataset_replay_smoke/deform_plus_raw/replay_summary.json",
+      "metrics": {
+        "samples": 448,
+        "failed_samples": 0,
+        "tactile_raw_requested": 448,
+        "tactile_raw_available": 448,
+        "ooi_target_present": 448,
+        "planner_available": 448,
+        "training_loss_samples": 448,
+        "fractions": {
+          "tactile_raw_requested": 1.0,
+          "tactile_raw_available": 1.0,
+          "ooi_target_present": 1.0,
+          "planner_available": 1.0
+        },
+        "action_error": {
+          "samples": 448,
+          "values": 436800,
+          "mae": 0.0044856035303399745,
+          "rmse": 0.018979347754057508,
+          "max_abs": 1.3382622003555298,
+          "first_step_mae": {
+            "count": 448,
+            "mean": 0.002586192705181861,
+            "std": 0.0018920671775018527,
+            "min": 0.0004115239335288397,
+            "max": 0.021936704110927307
+          },
+          "first_step_rmse": {
+            "count": 448,
+            "mean": 0.004689461529668472,
+            "std": 0.0036158409508688046,
+            "min": 0.0005879366431441339,
+            "max": 0.04965004555406396
+          },
+          "last_step_mae": {
+            "count": 448,
+            "mean": 0.006080426895203561,
+            "std": 0.01135997809789128,
+            "min": 0.00035734997421129196,
+            "max": 0.2163476741227966
+          },
+          "last_step_rmse": {
+            "count": 448,
+            "mean": 0.011178332290345356,
+            "std": 0.020991449772584485,
+            "min": 0.0005292766945567206,
+            "max": 0.40366871970434376
+          },
+          "horizon_mae": [
+            0.002586192705181862,
+            0.0033967519163075896,
+            0.003796911324171691,
+            0.004082110891808839,
+            0.004237215761970415,
+            0.004125255094670754,
+            0.00445914424418762,
+            0.004508063224937643,
+            0.004657841263354089,
+            0.004715757824073351,
+            0.004869035434256888,
+            0.0049940712987979,
+            0.005189183783734808,
+            0.005586091292442615,
+            0.006080426895203559
+          ],
+          "horizon_rmse": [
+            0.0059216007312398525,
+            0.015141972435608095,
+            0.01575374262067175,
+            0.018042681330591354,
+            0.019329142536719263,
+            0.013787525193402116,
+            0.018143140333747535,
+            0.01853044833393646,
+            0.02138519978410245,
+            0.02054115651300114,
+            0.02079520960037194,
+            0.021951625658062867,
+            0.021479823117887462,
+            0.022546599489903833,
+            0.023782263902923845
+          ],
+          "top_dimension_mae": [
+            {
+              "dim": 33,
+              "mae": 0.015068098171515285
+            },
+            {
+              "dim": 34,
+              "mae": 0.014205770252582234
+            },
+            {
+              "dim": 4,
+              "mae": 0.012114553032527975
+            },
+            {
+              "dim": 35,
+              "mae": 0.010696654146903755
+            },
+            {
+              "dim": 5,
+              "mae": 0.010371985362819811
+            },
+            {
+              "dim": 9,
+              "mae": 0.008988541154135311
+            },
+            {
+              "dim": 12,
+              "mae": 0.008505519571864269
+            },
+            {
+              "dim": 6,
+              "mae": 0.00833957329269608
+            },
+            {
+              "dim": 7,
+              "mae": 0.008259104165946544
+            },
+            {
+              "dim": 16,
+              "mae": 0.008002775495167551
+            }
+          ]
+        },
+        "training_style_loss": {
+          "chunked_loss_mean": {
+            "count": 448,
+            "mean": 0.015254615788340484,
+            "std": 0.04811638797773205,
+            "min": 9.667577251093462e-05,
+            "max": 0.7624915838241577
+          },
+          "loss": {
+            "count": 448,
+            "mean": 0.015254616520418754,
+            "std": 0.048116390789403336,
+            "min": 9.667577251093462e-05,
+            "max": 0.7624916434288025
+          },
+          "loss_aux_total": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "loss_base_flow": {
+            "count": 448,
+            "mean": 0.015254616520418754,
+            "std": 0.048116390789403336,
+            "min": 9.667577251093462e-05,
+            "max": 0.7624916434288025
+          },
+          "loss_curve_fm_raw": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "loss_curve_fm_weighted": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "loss_curve_raw": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "loss_curve_weighted": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "loss_end_raw": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "loss_end_weighted": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "loss_start_raw": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "loss_start_weighted": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "loss_total": {
+            "count": 448,
+            "mean": 0.015254616520418754,
+            "std": 0.048116390789403336,
+            "min": 9.667577251093462e-05,
+            "max": 0.7624916434288025
+          },
+          "loss_width_raw": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "loss_width_weighted": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "metric_curve_fm_finite": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "metric_curve_fm_jvp_error_norm": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "metric_curve_fm_jvp_norm_pred": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "metric_curve_fm_jvp_norm_target": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "metric_curve_fm_max_abs_velocity_pred": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "metric_curve_fm_max_abs_velocity_target": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "metric_curve_fm_min_predicted_span_width": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "metric_curve_fm_velocity_mae": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "metric_curve_fm_velocity_rms": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "metric_curve_mae_rad": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "metric_end_mae_rad": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "metric_start_mae_rad": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "metric_width_mae": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          }
+        },
+        "timings_ms": {
+          "dino_camera": {
+            "count": 448,
+            "mean": 29.062796678547084,
+            "std": 6.68742889838917,
+            "min": 18.320053000024927,
+            "max": 58.984350000173436
+          },
+          "dino_ooi": {
+            "count": 448,
+            "mean": 19.30467658933058,
+            "std": 2.6297083917326716,
+            "min": 14.590546000363247,
+            "max": 35.48439000041981
+          },
+          "ooi": {
+            "count": 448,
+            "mean": 5.503088348216271,
+            "std": 1.2047662592058668,
+            "min": 3.716571000040858,
+            "max": 11.48623300014151
+          },
+          "openpi": {
+            "count": 448,
+            "mean": 178.29587354462723,
+            "std": 13.550615552219499,
+            "min": 167.35677499946178,
+            "max": 257.461277999937
+          },
+          "openpi_policy_only": {
+            "count": 448,
+            "mean": 173.64197450891075,
+            "std": 13.498376559204429,
+            "min": 163.61378900001,
+            "max": 253.23784800002613
+          },
+          "planner": {
+            "count": 448,
+            "mean": 24.7347935669211,
+            "std": 2.630532770190884,
+            "min": 19.731547999981558,
+            "max": 54.09495500043704
+          },
+          "total": {
+            "count": 448,
+            "mean": 423.0317890803365,
+            "std": 20.669808168224886,
+            "min": 388.9888140001858,
+            "max": 511.4688949997799
+          },
+          "training_loss": {
+            "count": 448,
+            "mean": 159.42856480357446,
+            "std": 13.220996471437692,
+            "min": 148.54203300001245,
+            "max": 252.89101300040784
+          }
+        }
+      }
+    },
+    "deform_plus_raw_planner_dropped": {
+      "tactile_mode": "deform_plus_raw_planner_dropped",
+      "elapsed_seconds": 360.8566708520002,
+      "samples_per_second": 1.2414901432811263,
+      "planned_samples": 448,
+      "processed_samples": 448,
+      "per_sample_path": "/home/ubuntu/RO-Inference-Comp-Action-Chunk-Planner-Raw-Phase-2/outputs/dataset_replay_smoke/deform_plus_raw_planner_dropped/per_sample_metrics.jsonl",
+      "summary_path": "/home/ubuntu/RO-Inference-Comp-Action-Chunk-Planner-Raw-Phase-2/outputs/dataset_replay_smoke/deform_plus_raw_planner_dropped/replay_summary.json",
+      "metrics": {
+        "samples": 448,
+        "failed_samples": 0,
+        "tactile_raw_requested": 448,
+        "tactile_raw_available": 448,
+        "ooi_target_present": 0,
+        "planner_available": 0,
+        "training_loss_samples": 448,
+        "fractions": {
+          "tactile_raw_requested": 1.0,
+          "tactile_raw_available": 1.0,
+          "ooi_target_present": 0.0,
+          "planner_available": 0.0
+        },
+        "action_error": {
+          "samples": 448,
+          "values": 436800,
+          "mae": 0.004475428746157762,
+          "rmse": 0.018939287616350286,
+          "max_abs": 1.3309674263000488,
+          "first_step_mae": {
+            "count": 448,
+            "mean": 0.0025744746682356103,
+            "std": 0.0019332985360110864,
+            "min": 0.0003846191088681595,
+            "max": 0.022464121423231866
+          },
+          "first_step_rmse": {
+            "count": 448,
+            "mean": 0.004680512117369746,
+            "std": 0.0037973217436880115,
+            "min": 0.0005696194930496613,
+            "max": 0.05143178148120114
+          },
+          "last_step_mae": {
+            "count": 448,
+            "mean": 0.006061124288453861,
+            "std": 0.011322829395760665,
+            "min": 0.00034098328133740536,
+            "max": 0.21599536426365376
+          },
+          "last_step_rmse": {
+            "count": 448,
+            "mean": 0.011164101519273413,
+            "std": 0.020907508567438934,
+            "min": 0.0005141221811712114,
+            "max": 0.40283633011062764
+          },
+          "horizon_mae": [
+            0.0025744746682356107,
+            0.003383082198177078,
+            0.003782496328474849,
+            0.004068725191354698,
+            0.004226302943514352,
+            0.004111864359994954,
+            0.004444875558617634,
+            0.004499695626316552,
+            0.00464345519375245,
+            0.004699735529920395,
+            0.004868036107951422,
+            0.005007178600413753,
+            0.005185506768601238,
+            0.005574877828587587,
+            0.006061124288453859
+          ],
+          "horizon_rmse": [
+            0.006027175632577066,
+            0.015159324058425187,
+            0.015758134253740307,
+            0.018004285672623823,
+            0.01926483924246897,
+            0.013741619207911582,
+            0.018051464454424383,
+            0.01846846779619041,
+            0.021188048564838916,
+            0.020487999576800222,
+            0.020811591203769825,
+            0.021982997503210533,
+            0.021478356874313178,
+            0.022512029067407794,
+            0.02370149947218899
+          ],
+          "top_dimension_mae": [
+            {
+              "dim": 33,
+              "mae": 0.014978752397319979
+            },
+            {
+              "dim": 34,
+              "mae": 0.014207045328883049
+            },
+            {
+              "dim": 4,
+              "mae": 0.011887676103056796
+            },
+            {
+              "dim": 35,
+              "mae": 0.01072879905700358
+            },
+            {
+              "dim": 5,
+              "mae": 0.010349649936861603
+            },
+            {
+              "dim": 9,
+              "mae": 0.009012658442496027
+            },
+            {
+              "dim": 12,
+              "mae": 0.00846757182447269
+            },
+            {
+              "dim": 6,
+              "mae": 0.008356010129552617
+            },
+            {
+              "dim": 7,
+              "mae": 0.008227607486413933
+            },
+            {
+              "dim": 16,
+              "mae": 0.007987521692833238
+            }
+          ]
+        },
+        "training_style_loss": {
+          "chunked_loss_mean": {
+            "count": 448,
+            "mean": 0.014924724295643241,
+            "std": 0.04106319937187964,
+            "min": 9.680275252321735e-05,
+            "max": 0.454027384519577
+          },
+          "loss": {
+            "count": 448,
+            "mean": 0.014924724907765656,
+            "std": 0.04106320114996521,
+            "min": 9.680275979917496e-05,
+            "max": 0.4540274143218994
+          },
+          "loss_aux_total": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "loss_base_flow": {
+            "count": 448,
+            "mean": 0.014924724907765656,
+            "std": 0.04106320114996521,
+            "min": 9.680275979917496e-05,
+            "max": 0.4540274143218994
+          },
+          "loss_curve_fm_raw": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "loss_curve_fm_weighted": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "loss_curve_raw": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "loss_curve_weighted": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "loss_end_raw": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "loss_end_weighted": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "loss_start_raw": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "loss_start_weighted": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "loss_total": {
+            "count": 448,
+            "mean": 0.014924724907765656,
+            "std": 0.04106320114996521,
+            "min": 9.680275979917496e-05,
+            "max": 0.4540274143218994
+          },
+          "loss_width_raw": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "loss_width_weighted": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "metric_curve_fm_finite": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "metric_curve_fm_jvp_error_norm": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "metric_curve_fm_jvp_norm_pred": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "metric_curve_fm_jvp_norm_target": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "metric_curve_fm_max_abs_velocity_pred": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "metric_curve_fm_max_abs_velocity_target": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "metric_curve_fm_min_predicted_span_width": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "metric_curve_fm_velocity_mae": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "metric_curve_fm_velocity_rms": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "metric_curve_mae_rad": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "metric_end_mae_rad": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "metric_start_mae_rad": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "metric_width_mae": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          }
+        },
+        "timings_ms": {
+          "dino_camera": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "dino_ooi": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "ooi": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "openpi": {
+            "count": 448,
+            "mean": 190.40267237276976,
+            "std": 15.178918795535616,
+            "min": 169.68682299921056,
+            "max": 265.69874599954346
+          },
+          "openpi_policy_only": {
+            "count": 448,
+            "mean": 183.829693808022,
+            "std": 14.800617352804725,
+            "min": 165.19082200011326,
+            "max": 259.4242539998959
+          },
+          "planner": {
+            "count": 448,
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "total": {
+            "count": 448,
+            "mean": 356.4107522366417,
+            "std": 20.53140150518193,
+            "min": 324.1554670003097,
+            "max": 429.85745200076053
+          },
+          "training_loss": {
+            "count": 448,
+            "mean": 159.4625897388268,
+            "std": 13.704299120034664,
+            "min": 146.47994200004177,
+            "max": 235.32585699922492
+          }
+        }
+      }
+    }
+  }
+}

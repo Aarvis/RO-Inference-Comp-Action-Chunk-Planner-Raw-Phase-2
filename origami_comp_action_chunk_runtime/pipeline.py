@@ -403,7 +403,7 @@ class CompActionChunkPipeline:
         size = int(self.config.runtime.camera_image_size)
         if image_rgb.shape[:2] == (size, size):
             return np.ascontiguousarray(image_rgb)
-        return np.ascontiguousarray(cv2.resize(image_rgb, (size, size), interpolation=cv2.INTER_AREA))
+        return np.ascontiguousarray(cv2.resize(image_rgb, (size, size), interpolation=cv2.INTER_LINEAR))
 
     @staticmethod
     def _require_rgb(observation: Mapping[str, Any], key: str) -> np.ndarray:
